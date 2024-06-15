@@ -1,0 +1,85 @@
+Начинать строго с 3 строки!!! согласно формата: Вставлать нужно тройками строк. Первая - название материала. Вторая - адрес страницы. Третья - Selector элеманта, где содержится цена. Четвертая - пустая строка.
+---------------------------------------------------------------------------------------------
+Бетон М300
+https://ivbeton37.ru/services
+#section-5931973 > ul > li:nth-child(5) > b:nth-child(2)
+
+Блок ФБС 24-4-6 (2380*400*580)
+https://бетон37.рф/price.htm
+body > table > tbody > tr:nth-child(4) > td > div.inf > table:nth-child(6) > tbody > tr:nth-child(2) > td:nth-child(3) > p > strong
+
+Плита перекрытия 1.6 ПБ 50.15-8
+https://gbi-ivanovo.ru/izdeliya/plityi-perekryitiya/1-pb-50-15-8.html
+body > div.wide_wrap.inside > div.wrap.inner_page_content > main > div.prod_descr > div.prod_descr_block > div.prod_descr_price > span
+
+Свая ЖБ с оголовком 300х300х3000 мм
+https://ivanovo.zbsv.ru/tseny
+body > div.viewport-wrapper > div > div > div:nth-child(63) > div:nth-child(3) > div:nth-child(1) > div.sum
+
+Сваи забивные монтаж 3м
+https://ivanovo.zbsv.ru/tseny
+body > div.viewport-wrapper > div > div > div:nth-child(30) > div:nth-child(3) > div:nth-child(1) > div.sum
+
+Цемент М500,  50кг мешок
+https://stroimvmeste37.ru/stroymaterialy/cement-1/cement-m500-cem-i-42-5n-50-kg-a-c
+body > section > div > div.fix-of > div > div:nth-child(1) > div.r-flex > div.r-flex.card-price > span
+
+Арматура д12 рифл 1 п.м.
+http://xn--37-6kcaae0at7aah2a2c.xn--p1ai/magazin/product/7459703
+#tovar_card2 > div:nth-child(3) > div > form > ul > li.price > span > b
+
+Блок газосиликатный D500 B3,5 600x400x250
+https://stk-stroy37.ru/shop/category/gazobetonnye-bloki/
+#product-list > div > div:nth-child(6) > div > form > div.caption > div.offers > div > div.price.text-center
+
+Клей для газо-пено-блоков, 25кг мешок
+https://novostroy37.ru/catalog/stroitelnye_materialy/sukhie_smesi/kley/518780/
+#bx_117848907_518780 > div.right_info > div > div.middle_info.main_item_wrapper > div.prices_block > div.cost.prices.clearfix > div.price_matrix_block > div > div > div > span > span.values_wrapper > span > span.price_value
+
+Кирпич фасадный соломенный сдинарный "Бархат"
+https://ivanovo.brick360.ru/catalog/stenovye-materialy/rossiyskiy-oblitsovochnyy-kirpich/dlya-fasada/
+#gallery-items > div:nth-child(6) > div > div > div.productinfo.text-center > div > div
+
+Камень для стен фасадный/ Плитка "Старый кирпич 330"
+https://novostroy37.ru/catalog/stroitelnye_materialy/kamen_oblitsovochnyy_1/541711/
+#bx_117848907_541711 > div.right_info > div > div.middle_info.main_item_wrapper > div.prices_block > div.cost.prices.clearfix > div.price_matrix_block > div > div > div > span > span.values_wrapper > span > span.price_value
+
+Профнастил С8 0,35*1200*1800 6005 зел мох
+https://novostroy37.ru/catalog/krovlya_fasad_zabor/krovlya/profnastil_1/524046/
+#bx_117848907_524046 > div.right_info > div > div.middle_info.main_item_wrapper > div.prices_block > div.cost.prices.clearfix > div.price_matrix_block > div > div > div > span > span.values_wrapper > span > span.price_value
+
+Еврозабор Панель забора 2,0х2,5м ячейка 200х60х3 мм
+https://novostroy37.ru/catalog/krovlya_fasad_zabor/zabory_vorota_kalitki_1/567269/
+#bx_117848907_567269 > div.right_info > div > div.middle_info.main_item_wrapper > div.prices_block > div.cost.prices.clearfix > div.price_matrix_block > div > div > div > span > span.values_wrapper > span > span.price_value
+
+Еврозабор Столб 3м 50х50х1,5мм
+https://novostroy37.ru/catalog/krovlya_fasad_zabor/zabory_vorota_kalitki_1/513827/
+#bx_117848907_513827 > div.right_info > div > div.middle_info.main_item_wrapper > div.prices_block > div.cost.prices.clearfix > div.price_matrix_block > div > div > div > span > span.values_wrapper > span > span.price_value
+
+Забор бетон столб усилен 3000*75*95 мм
+https://ivanovo.zaborstroyrf.ru/proizvodstvo/stolby-dlya-zabora
+#content > div > div > div:nth-child(2) > div.item-page > div:nth-child(4) > table:nth-child(16) > tbody > tr:nth-child(4) > td:nth-child(3)
+
+Забор доска профилир обрезн 3000*150*25
+https://pilorama37.ru/prajs-list
+#system > article > div > div:nth-child(8) > table > tbody > tr:nth-child(23) > td:nth-child(6)
+
+Крыша Пенопласт ПСБ-С 25 2000х1000х100 мм (0,2 м2)
+https://iv-penoplast.ru/katalog/penoplast-psb-s-25/penoplast-psb-c-25-100
+#bx_117848907_173771 > div.row.mobile-blocks > div.col-md-7.mobile-block-7 > div > div:nth-child(2) > div.price > b
+
+Крыша Пенопласт ПСБ-С 25Ф 2000х1000х100 мм (0,2 м2)
+https://novostroy37.ru/catalog/izolyatsionnye_materialy/penoplast_1/519612/
+#bx_117848907_519612 > div.right_info > div > div.middle_info.main_item_wrapper > div.prices_block > div.cost.prices.clearfix > div.price_matrix_block > div > div > div > span > span.values_wrapper > span > span.price_value
+
+Крыша Пенопласт ПСБ-С 25Ф лайт 2000х1000х50 мм (0,2 м2)
+https://novostroy37.ru/catalog/izolyatsionnye_materialy/penoplast_1/519597/
+#bx_117848907_519597 > div.right_info > div > div.middle_info.main_item_wrapper > div.prices_block > div.cost.prices.clearfix > div.price_matrix_block > div > div > div > span > span.values_wrapper > span > span.price_value
+
+Крыша пенопласт Технониколь XPS CARBON PROF SLOPE 2,1% плита А 10-35 мм 1200*600 18 шт (12,96 м2)
+https://www.tophouse.ru/price/44621/
+#price
+
+Крыша пенопласт Технониколь XPS CARBON PROF SLOPE 2,1% плита В 35-60 мм 1200*600 8 шт (5,760 м2)
+https://www.tophouse.ru/price/44622/
+#price

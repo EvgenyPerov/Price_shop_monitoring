@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Google Chart</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <style type="text/css">
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 20%;
+            align-items:center;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+
+    <div class="dropdown">
+        <label style="margin-right: 10px">Выбери товар из списка:</label>
+        <select class="dropbtn" id="keySelect"
+                onmousedown="if(this.options.length>5){this.size=5;}"  onblur="this.size=0;"
+                onchange="updateChart();">
+            <option th:each="item : ${chartData.keySet()}" th:value="${item}" th:text="${item}"></option>
+        </select>
+    </div>
+</div>
+
+<div align="center" style="width: 1000px;">
+    <div id="chart_div"></div>
+</div>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var chartData = [[${chartData}]];
+
+    function getInitialKey() {
+        const elements = document.getElementById("keySelect").options;
+        if (elements.length > 0) {
+            return elements[0].value;
+        }
+        return null;
+    }
+
+    function updateChart() {
+        var selectedKey = document.getElementById("keySelect").value;
+        drawColumnChart(selectedKey);
+    }
+
+    $(document).ready(function() {
+        google.charts.load('current', {
+            packages: ['corechart', 'bar']
+        });
+        google.charts.setOnLoadCallback(function() {
+            var initialKey = getInitialKey();
+            drawColumnChart(initialKey);
+        });
+    });
+
+    function drawColumnChart(key) {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Date');
+        data.addColumn('number', 'Цена');
+
+        if (key in chartData) {
+            var selectedData = chartData[key];
+            for (var date in selectedData) {
+                if (selectedData.hasOwnProperty(date)) {
+                    var price = selectedData[date];
+                    data.addRow([date, price]);
+                }
+            }
+        }
+
+        var options = {
+            title: 'Статистика изменения цен в магазине',
+            subtitle: 'в рублях',
+            width: 1800,
+            height: 800,
+            hAxis: { title: 'Дата' },
+            vAxis: { title: 'Цена' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+    /*]]>*/
+</script>
+</body>

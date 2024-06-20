@@ -53,10 +53,12 @@ public class PriceService {
     }
 
     private void updateDataInDb(List<String> strings) {
+        int step = 2;
+        int size = strings.size();
         List<Product> productsForUpdate = new ArrayList<>();
-        for (int i = 2; i < strings.size() - 2; i+=3) {
+        for (int i = step; i < size - step; i+=step+1) {
             if (strings.get(i).isBlank()) {
-                i-=2;
+                i-=step;
                 continue;
             }
 
@@ -86,13 +88,12 @@ public class PriceService {
 
     @NotNull
     private Product createProduct(String name, String url, String tag, LocalDate now) {
-        Product product = productRepository.save(Product.builder()
+        return productRepository.save(Product.builder()
             .name(name)
             .url(url)
             .tag(tag)
             .lastUpdateDate(now)
             .build());
-        return product;
     }
 
     private void createInfo(LocalDate now, Product product) {
@@ -115,7 +116,7 @@ public class PriceService {
         }
 
         if (strings == null || strings.size()<3) {
-            throw new RuntimeException("Не найдены данные для обработки в файле с данными. Прочитайте инструкцию в файле");
+            throw new IllegalArgumentException("Не найдены данные для обработки в файле с данными. Прочитайте инструкцию в файле");
         }
         return strings;
     }
@@ -135,7 +136,7 @@ public class PriceService {
                 Document doc = Jsoup.parse(body);
                 elements = doc.select(product.getTag());
             } catch (IOException e) {
-                throw new RuntimeException("Ошибка выполнения HTTP запроса и получения данных.Проверьте корректность адреса: " + product.getUrl());
+                throw new IllegalArgumentException("Ошибка выполнения HTTP запроса и получения данных.Проверьте корректность адреса: " + product.getUrl());
             } catch (Selector.SelectorParseException e) {
                 log.info("Для товара \"" + product.getName() + "\" цена не определена, проверьте корректность Selector либо выберите другой магазин");
             }
@@ -154,8 +155,8 @@ public class PriceService {
     }
 
     public static float extractPrice(String priceText) {
-        String deletedCube = priceText.replaceAll("m3", "").replaceAll("M3","").replaceAll("м3", "").replaceAll("М3", "")
-            .replaceAll("m2", "").replaceAll("M2","").replaceAll("м2", "").replaceAll("М2", "");
+        String deletedCube = priceText.replace("m3", "").replace("M3","").replace("м3", "").replace("М3", "")
+            .replace("m2", "").replace("M2","").replace("м2", "").replace("М2", "");
 
         String cleanedText = deletedCube.replaceAll("[^0-9,.]", "").trim();
         // Проверяем, содержит ли строка запятую

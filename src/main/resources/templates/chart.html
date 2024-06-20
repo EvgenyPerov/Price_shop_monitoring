@@ -30,20 +30,21 @@
 <body>
 
 <div>
-
     <div class="dropdown">
-        <label style="margin-right: 10px">Выбери товар из списка:</label>
-        <select class="dropbtn" id="keySelect"
-                onmousedown="if(this.options.length>5){this.size=5;}"  onblur="this.size=0;"
-                onchange="updateChart();">
-            <option th:each="item : ${chartData.keySet()}" th:value="${item}" th:text="${item}"></option>
-        </select>
+        <label style="margin-right: 10px">Выбери товар из списка:
+            <select class="dropbtn" id="keySelect"
+                    onmousedown="if(this.options.length>5){this.size=5;}" onblur="this.size=0;"
+                    onchange="updateChart();">
+                <option th:each="item : ${chartData.keySet()}" th:value="${item}" th:text="${item}"></option>
+            </select>
+        </label>
     </div>
 </div>
 
 <div align="center" style="width: 1000px;">
     <div id="chart_div"></div>
 </div>
+
 <script th:inline="javascript">
     /*<![CDATA[*/
     var chartData = [[${chartData}]];

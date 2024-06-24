@@ -49,3 +49,5 @@ http://localhost:8080/chart
 1. запустить Docker-compose.yaml
 2.  из корня проекта запустить команду в командной строке:
 sonar-scanner -Dsonar.projectKey=Price-change-shop-sonarqube -Dsonar.login=squ_b4d8b53fe1483b26fb940f359bab176c93549e75
+3. обновить страницу с результатами анализа по ссылке: http://localhost:9000/projects
+   При первом входе логин admin, пароль или 1 или admin
